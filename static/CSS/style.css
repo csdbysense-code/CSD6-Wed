@@ -1,0 +1,1189 @@
+/* style.css */
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap");
+
+:root {
+  --primary-color: #00264b; /* สีน้ำเงินเข้มราชการ */
+  --secondary-color: #0056b3; /* สีน้ำเงินสว่าง */
+  --accent-color: #ffd300; /* สีทองสำหรับเน้น */
+  --bg-color: #f4f4f4;
+  --bg-light: #f4f6f9;
+  --text-color: #333;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --white: #ffffff;
+  --sidebar-width: 250px;
+  --border-radius: 4px; /* มุมโค้งเล็กน้อย ดูทางการ */
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Sarabun", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* --- Components --- */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "Sarabun", sans-serif;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border-top: 3px solid var(--primary-color); /* Signature ราชการ */
+}
+
+/* --- Layout: Header & Nav (Public) --- */
+header {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-bar {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 5px 20px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5%;
+}
+
+.logo h1 {
+  background-size: cover;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.logo span {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: block;
+}
+
+.main-menu ul {
+  display: flex;
+  gap: 20px;
+}
+
+.main-menu a {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.main-menu a:hover {
+  color: var(--secondary-color);
+}
+
+/* --- Layout: Login --- */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-family: "Sarabun", sans-serif;
+}
+
+/* --- Layout: Workspace (Admin) --- */
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Responsive Table */
+.table-responsive {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f8f9fa;
+  color: var(--primary-color);
+}
+
+.black-image {
+  /* ทำให้เป็นสีขาวดำ 100% */
+  filter: grayscale(100%);
+  /* เพิ่ม transition เพื่อให้การเปลี่ยนสีดูนุ่มนวล */
+  transition: filter 0.3s ease;
+}
+
+.black-image:hover {
+  /* เมื่อเอาเมาส์วาง ให้กลับมาเป็นสีปกติ */
+  filter: grayscale(0%);
+}
+
+/* --- Hero Banner Style --- */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 800px; /* ปรับความสูงตามต้องการ */
+  background-image: url("https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/625385647_943935948139943_32902351512880655_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3eHIxPCnGeYQ7kNvwGg0WX8&_nc_oc=AdncoaaEP9YTQl6SN8IEgm4ldGNEYZddSW7ckQtC3A531aPvq9_AUjFGqsc0wUqnf_4&_nc_zt=23&_nc_ht=scontent.fbkk5-5.fna&_nc_gid=Iw7LDnUv3EDSFrNbg0B0EQ&oh=00_Afux6Aprn9WudgUowksX3GfRMBsR-rUyEG8RFu24f4BEQQ&oe=69889BD8"); /* ใส่ชื่อไฟล์ภาพ image_b1f584.jpg */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+    /* ทำให้เป็นสีขาวดำ 100% */
+  filter: grayscale(100%);
+  /* เพิ่ม transition เพื่อให้การเปลี่ยนสีดูนุ่มนวล */
+  transition: filter 0.3s ease;
+}
+
+/* เพิ่มเลเยอร์สีดำโปร่งแสงเพื่อให้ตัวหนังสือเด่น */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* ดำ 40% */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 4rem; /* ขนาดใหญ่พิเศษ */
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-subtitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-line {
+  width: 80px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 20px auto;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* ปรับปรุงให้รองรับมือถือ */
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  .hero-banner {
+    height: 300px;
+  }
+  .tab-btn {
+    flex: 1 1 100%; /* ปุ่มเรียงลงมาแนวตั้งในมือถือ */
+    border-bottom: 1px solid #eee;
+  }
+  .tab-btn.active {
+    border-bottom: 4px solid var(--primary-color);
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .filter-box {
+    width: 100%;
+  }
+  .filter-box select {
+    width: 100%;
+  }
+  .contact-container {
+    grid-template-columns: 1fr; /* เรียงเป็นแนวตั้ง */
+  }
+  .map-wrapper {
+    min-height: 300px;
+    order: -1; /* เอาแผนที่ขึ้นก่อนบนมือถือ (Optional) */
+      }
+  .main-container {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            body {
+                height: auto;
+                overflow-y: auto;
+            }
+            .portal-card {
+                width: 90%;
+                height: 250px;
+            }    
+}
+/* --- News Grid Layout --- */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+.news-grid.fade-in {
+  opacity: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #0056b3;
+  margin-bottom: 5px;
+}
+
+header p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ส่วนหัวข้อประจำเดือน */
+/* --- เริ่มต้น CSS ของคุณ --- */
+
+/* ส่วนหัวข้อประจำเดือน */
+.month-group {
+  margin-bottom: 40px;
+}
+
+.month-title {
+  font-size: 1.5rem;
+  color: #444;
+  border-left: 5px solid #0056b3;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Grid Layout สำหรับการ์ด */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ดีไซน์ตัวการ์ด */
+.news-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  text-decoration: none; /* ลิงค์ไม่มีขีดเส้นใต้ */
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ส่วนรูปภาพในการ์ด */
+.card-image {
+  width: 100%;
+  height: 180px;
+  background-color: #ddd;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ให้ภาพเต็มพื้นที่โดยไม่เสียสัดส่วน */
+}
+
+/* ส่วนเนื้อหาในการ์ด */
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #222;
+  margin: 0;
+  /* ตัดคำถ้าเกิน 3 บรรทัด */
+  overflow: hidden;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  padding: 50px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 15px 30px;
+  font-family: "Sarabun", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.tab-btn:hover {
+  color: var(--primary-color);
+  background-color: #fff5f5;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
+}
+
+/* เนื้อหาในแต่ละส่วน */
+.content-section {
+  display: none; /* ซ่อนไว้ก่อน */
+  animation: fadeIn 0.5s;
+}
+
+.content-section.active {
+  display: block; /* แสดงเมื่อถูกเลือก */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.filter-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.custom-select {
+  padding: 10px 15px;
+  font-family: "Sarabun", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  min-width: 200px;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.custom-select:hover {
+  border-color: #bbb;
+}
+
+.custom-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+/* --- CSS เดิม --- */
+
+.month-title {
+  font-size: 1.5rem;
+  color: #444;
+  border-left: 5px solid var(--primary-color);
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Grid Layout */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* News Card Design */
+.news-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Section (Col I) */
+.card-image {
+  width: 100%;
+  height: 180px;
+  background-color: #eee;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.news-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+/* Content Section (Col G & C) */
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #222;
+  margin: 0;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  padding: 50px;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- สิ้นสุด CSS ของคุณ --- */
+
+/* --- เริ่ม CSS ประชาสัมพันธ์ --- */
+.filter-section {
+  margin-bottom: 30px;
+  text-align: right;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.card-date::before {
+  content: "📅";
+  margin-right: 5px;
+}
+.card-tag {
+  margin-top: auto;
+  display: inline-block;
+  background-color: #e3f2fd;
+  color: var(--accent-color);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  align-self: flex-start;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+.close-btn:hover {
+  color: black;
+}
+.modal-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  background-color: #000;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.modal-img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+.modal-body {
+  padding: 30px;
+}
+.modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+.modal-date {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.modal-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  white-space: pre-wrap; /* รักษารูปแบบการขึ้นบรรทัดใหม่ */
+}
+.modal-text {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  white-space: pre-wrap; /* รักษารูปแบบการขึ้นบรรทัดใหม่ */
+  color: #444;
+}
+.modal-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-style: italic;
+}
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #eee;
+}
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background-color: #eee;
+}
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.card-excerpt {
+  font-size: 0.95rem;
+  color: #555;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.card-badge {
+  align-self: flex-start;
+  background-color: #e8eaf6;
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.modal-img-container {
+  width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+.tags-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.tag-link {
+  display: inline-block;
+  background-color: #1877f2; /* Facebook Blue */
+  color: white;
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  transition: background-color 0.3s;
+}
+
+.tag-link:hover {
+  background-color: #145dbf;
+}
+.filter-box select {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+/* --- สิ้นสุด CSS ประชาสัมพันธ์ --- */
+
+/* --- CSS สำหรับจัดลำดับชั้นผู้บังคับบัญชา (ใหม่) --- */
+.commander-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* ระยะห่างระหว่างชั้นยศ */
+  padding: 20px 0;
+}
+
+.rank-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rank-title {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+/* ขีดเส้นใต้หัวข้อชั้นยศให้ดูสวยงาม */
+.rank-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 5px auto 0;
+  border-radius: 2px;
+}
+
+.commander-row {
+  display: flex;
+  justify-content: center; /* จัดให้อยู่กึ่งกลางเสมอ */
+  flex-wrap: wrap; /* ถ้าหน้าจอเล็กให้ปัดลงมาบรรทัดใหม่ */
+  gap: 25px; /* ระยะห่างระหว่างการ์ด */
+  width: 100%;
+}
+
+/* ปรับขนาดการ์ดให้เหมาะสม */
+.commander-card {
+  background: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 240px; /* กำหนดความกว้างคงที่เพื่อให้จัดระเบียบง่าย */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.commander-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--secondary-color);
+}
+
+/* ไฮไลท์การ์ดผู้กำกับให้ดูเด่นขึ้นเล็กน้อย */
+.chief-card {
+  border: 2px solid var(--primary-color);
+  background-color: #fffdfd;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#loading {
+  text-align: center;
+  margin-top: 50px;
+  color: #666;
+}
+
+/* Contact Us */
+.contact-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--secondary-color);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+/* Container Grid */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* แบ่งครึ่งซ้ายขวา */
+  gap: 40px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.icon-box {
+  background-color: var(--primary-color);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.info-content h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.info-content p,
+.info-content a {
+  font-size: 1rem;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.address-text {
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ปุ่มต่างๆ */
+.btn-map,
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.btn-map {
+  background-color: #fff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-map:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.social-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ฝั่งแผนที่ (ขวา) */
+.map-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.main-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 20px;
+            width: 100%;
+            flex-wrap: wrap; /* ให้พับลงมาเมื่อจอเล็ก */
+            z-index: 10;
+            
+        }
+
+        /* การ์ดลิ้งค์ */
+        .portal-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            height: 320px;
+            background: rgba(255, 255, 255, 0.03); /* พื้นหลังใส */
+            border: 1px solid rgba(255, 215, 0, 0.1); /* ขอบสีทองจางๆ */
+            border-radius: 4px; /* มุมเหลี่ยมเล็กน้อยให้ดูแข็งแกร่ง */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* ตกแต่งมุมการ์ด (Corner Accents) เพื่อความดุดัน */
+        .portal-card::before, .portal-card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        /* มุมบนซ้าย */
+        .portal-card::before {
+            top: -1px;
+            left: -1px;
+            border-top-color: #ffd700; /* สีทอง */
+            border-left-color: #ffd700;
+        }
+
+        /* มุมล่างขวา */
+        .portal-card::after {
+            bottom: -1px;
+            right: -1px;
+            border-bottom-color: #ffd700;
+            border-right-color: #ffd700;
+        }
+
+        /* จัดการรูปภาพโลโก้ */
+        .logo-img {
+            max-width: 80%;
+            max-height: 150px;
+            object-fit: contain;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.8));
+            transition: transform 0.4s ease;
+        }
+
+        /* ข้อความใต้โลโก้ */
+        .card-text {
+            color: #ccc;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .sub-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            font-weight: 300;
+        }
+
+        /* --- Hover Effects (เมื่อเอาเมาส์ชี้) --- */
+        .portal-card:hover {
+            background: rgba(255, 215, 0, 0.05); /* พื้นหลังเปลี่ยนเป็นสีทองจางๆ */
+            border-color: rgba(255, 215, 0, 0.6);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 20px rgba(255, 215, 0, 0.1); /* แสงเรือง */
+        }
+
+        .portal-card:hover .logo-img {
+            transform: scale(1.1); /* ขยายรูป */
+        }
+
+        .portal-card:hover .card-text {
+            color: #ffd700; /* เปลี่ยนตัวหนังสือเป็นสีทอง */
+        }

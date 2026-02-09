@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %} - CSD6</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <span>This is CSD6</span>
+        <span id="current-date"></span>
+      </div>
+      <header class="nav-container"> 
+        <div class="logo">
+            <h1>กองกำกับการ 6 กองบังคับการปราบปราม</h1>
+            <span style="text-align: left;">Crime Suppression Division 6 : CSD6</span>
+        </div>
+        <img src="https://cib.go.th/backend/uploads/medium_logo_cib_2_2x_1be93f4a36_dc4193cba8.png"  width="150" height="150" alt="CSD6 Logo" >
+        <nav class="main-menu">
+          <ul>
+            <li>
+              <a href="/"
+                >หน้าหลัก<br />
+                <p style="font-size: 12px">Home</p></a
+              >
+            </li>
+            <li>
+              <a href="/about"
+                >เกี่ยวกับเรา<br />
+                <p style="font-size: 12px">About Us</p></a
+              >
+            </li>
+            <li>
+              <a href="/success"
+                >ผลงาน<br />
+                <p style="font-size: 12px">Achievement</p></a
+              >
+            </li>
+            <li>
+              <a href="/advertise"
+                >ประชาสัมพันธ์<br />
+                <p style="font-size: 12px">Advertisement</p></a
+              >
+            </li>
+            <li>
+              <a href="/contact"
+                >ติดต่อเรา<br />
+                <p style="font-size: 12px">Contact Us</p></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    {% block section %} {% endblock %}
+
+    <main>{% block content %} {% endblock %}</main>
+
+    <footer
+      style="
+        background-color: var(--primary-color);
+        color: white;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      <div
+        style="
+          width: 85%;
+          max-width: 1200px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+        "
+      >
+        <div style="flex: 1">
+          <img
+            src="https://www.cib.go.th/uploads/Traditional_Logo_1_376e6d1d2b.png"
+            alt="Logoบช.ก."
+            style="
+              width: 180px;
+              position: relative;
+              right: 250px; /* ขยับไปทางขวา 10px */
+              top: -5px; /* ขยับขึ้นข้างบน 5px */
+              display: block;
+            "
+          />
+        </div>
+        <div style="flex: 1">
+          <img
+            src="https://www.cib.go.th/uploads/logo_cib_lable_yellow_e5657fbe6b_0205329682.png"
+            alt="LogoCIB"
+            style="
+              width: 180px;
+              position: relative;
+              right: 300px;
+              top: 35px;
+              display: block;
+            "
+          />
+        </div>
+
+        <div style="flex: 1.5; padding: 0 40px">
+          <h3 style="margin-top: 0; font-size: 24px">ที่อยู่</h3>
+          <p style="font-size: 16px; line-height: 1.6; opacity: 0.9">
+            1096 กองบังคับการปราบปราม ถนนพหลโยธิน <br />
+            แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร <br />
+            10900
+          </p>
+          <div style="margin-top: 15px; display: flex; align-items: center;">
+    
+    <a href="https://www.facebook.com/CIBTHAILAND/?locale=th_TH" target="_blank" style="margin-right: 15px; text-decoration: none; color: #1877F2;">
+        <i class="fa-brands fa-facebook fa-2x"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@cibpolice" target="_blank" style="margin-right: 15px; text-decoration: none; color: #000000;">
+        <i class="fa-brands fa-tiktok fa-2x"></i>
+    </a>
+
+    <a href="https://www.instagram.com/cib_thailand/" target="_blank" style="margin-right: 15px; text-decoration: none; color: #E4405F;">
+        <i class="fa-brands fa-instagram fa-2x"></i>
+    </a>
+
+</div>
+        </div>
+
+        <div style="flex: 1">
+          <h3 style="margin-top: 0; font-size: 24px">ติดต่อ</h3>
+          <p style="font-size: 16px; line-height: 1.6; opacity: 0.9">
+            อีเมล:saraban_csd.cib@police.go.th <br />
+            หมายเลขโทรศัพท์ติดต่อ:02 5111 753
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

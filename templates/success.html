@@ -1,0 +1,214 @@
+{% extends "layout.html" %} {% block title %}ผลงาน{% endblock %} {% block
+content %}
+<section
+  class="black-image"
+  class="black-image:hover"
+  style="
+    background: url(&quot;https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/557499637_843430604857145_2851904496190113233_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=qcE8G93QocYQ7kNvwECIRil&_nc_oc=Adn6J2ENd1QK-Hc7LUw_Hfx33IIT5JpzHTUHikYriDDGI7uaBgjIcv7n9fxbHmrV57k&_nc_zt=23&_nc_ht=scontent.fbkk5-6.fna&_nc_gid=A5CCI9yrP2GvRnxBERvasg&oh=00_AfuheQ9RL7K0OzgTgmpcEJMzXC9GmA5JZx3K2Atzy_FU6g&oe=6988C5BF&quot;)
+      no-repeat center/cover;
+    height: 425px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    opacity: 1;
+  "
+>
+  <div>
+    <h2
+      style="
+        font-size: 4rem;
+        color: #ffffff;
+        text-shadow: 10px 10px 40px rgb(0, 0, 0);
+      "
+    >
+      การปฏิบัติที่ประจักษ์
+    </h2>
+    <p
+      style="
+        font-size: 2rem;
+        margin-top: -18px;
+        color: #ffd300;
+        text-shadow: 10px 10px 40px #000000;
+        font-weight: bold;
+        text-decoration: underline;
+      "
+    >
+      ACHIEVEMENT
+    </p>
+  </div>
+</section>
+<main>
+  <div class="container">
+    <h1>สรุปข่าวและผลการปฏิบัติงาน</h1>
+
+    <div id="loading" class="loading">กำลังโหลดข้อมูล...</div>
+
+    <div class="filter-container" id="filterContainer" style="display: none">
+      <label for="monthSelect" class="filter-label">เลือกช่วงเวลา :</label>
+      <select id="monthSelect" class="custom-select">
+        <option value="all">ทั้งหมด</option>
+      </select>
+    </div>
+
+    <div id="currentMonthTitle" class="month-title" style="display: none"></div>
+
+    <div id="newsGrid" class="cards-grid fade-in"></div>
+  </div>
+</main>
+
+<script>
+  const SHEET_ID = "1s9Px5lhvXmfGuogF8E-QFZiPq_hJk74Rn5gULDxTMl8";
+  const GID = "0";
+  const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}`;
+
+  // --- การตั้งค่าคอลัมน์ (Index เริ่มที่ 0) ---
+  const COL_MONTH = 0; // Col A: ตัวกรองเดือน
+  const COL_TITLE = 2; // Col C: ชื่อเรื่อง
+  const COL_DATE = 6; // Col G: วันที่
+  const COL_LINK = 7; // Col H: ลิ้งค์ข่าว
+  const COL_IMG = 8; // Col I: รูปภาพ
+
+  let allNewsData = [];
+
+  async function fetchData() {
+    try {
+      const response = await fetch(CSV_URL);
+      const data = await response.text();
+      const rows = csvToArray(data).slice(1); // ตัด Header
+
+      allNewsData = rows
+        .map((row) => {
+          if (row.length < 2) return null;
+          return {
+            filterMonth: row[COL_MONTH] ? row[COL_MONTH].trim() : "อื่นๆ",
+            title: row[COL_TITLE],
+            displayDate: row[COL_DATE],
+            link: row[COL_LINK],
+            image: row[COL_IMG],
+          };
+        })
+        .filter((item) => item && item.title);
+
+      initDropdown();
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("filterContainer").style.display = "flex";
+    } catch (error) {
+      console.error("Error:", error);
+      document.getElementById("loading").innerText = "ไม่สามารถดึงข้อมูลได้";
+    }
+  }
+
+  function initDropdown() {
+    const select = document.getElementById("monthSelect");
+
+    // ดึงรายชื่อเดือนทั้งหมดที่มี (Unique)
+    const uniqueMonths = [
+      ...new Set(allNewsData.map((item) => item.filterMonth)),
+    ];
+
+    // เพิ่มตัวเลือกเข้าไปใน Dropdown
+    uniqueMonths.forEach((month) => {
+      if (month !== "อื่นๆ" && month !== "") {
+        const option = document.createElement("option");
+        option.value = month;
+        option.innerText = month;
+        select.appendChild(option);
+      }
+    });
+
+    // เพิ่ม Event Listener เมื่อเลือกค่าใหม่
+    select.addEventListener("change", function () {
+      filterNews(this.value);
+    });
+
+    // โหลดข้อมูลทั้งหมดเป็นค่าเริ่มต้น
+    filterNews("all");
+  }
+
+  function filterNews(monthKey) {
+    let filteredData;
+    const titleElem = document.getElementById("currentMonthTitle");
+
+    if (monthKey === "all") {
+      filteredData = allNewsData;
+      titleElem.innerText = "ข่าวทั้งหมด";
+    } else {
+      filteredData = allNewsData.filter(
+        (item) => item.filterMonth === monthKey,
+      );
+      titleElem.innerText = `ประจำเดือน ${monthKey}`;
+    }
+
+    titleElem.style.display = "block";
+    renderCards(filteredData);
+  }
+
+  function renderCards(data) {
+    const grid = document.getElementById("newsGrid");
+    grid.innerHTML = "";
+
+    // Animation Reset
+    grid.classList.remove("fade-in");
+    void grid.offsetWidth;
+    grid.classList.add("fade-in");
+
+    if (data.length === 0) {
+      grid.innerHTML =
+        '<p style="text-align:center; width:100%; color:#888;">ไม่พบข้อมูลข่าวในช่วงเวลานี้</p>';
+      return;
+    }
+
+    data.forEach((item) => {
+      const imgUrl =
+        item.image && item.image.trim() !== ""
+          ? item.image
+          : "https://via.placeholder.com/400x300?text=No+Image";
+      const linkUrl = item.link && item.link.trim() !== "" ? item.link : "#";
+      const targetAttr = linkUrl !== "#" ? 'target="_blank"' : "";
+      const dateTxt = item.displayDate || "";
+
+      const cardHtml = `
+                    <a href="${linkUrl}" class="news-card" ${targetAttr}>
+                        <div class="card-image">
+                            <img src="${imgUrl}" alt="${item.title}" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-date">${dateTxt}</span>
+                            <h3 class="card-title">${item.title}</h3>
+                        </div>
+                    </a>
+                `;
+      grid.innerHTML += cardHtml;
+    });
+  }
+
+  // CSV Parser
+  function csvToArray(text) {
+    let p = "",
+      row = [""],
+      ret = [row],
+      i = 0,
+      r = 0,
+      s = !0,
+      l;
+    for (l of text) {
+      if ('"' === l) {
+        if (s && l === p) row[i] += l;
+        s = !s;
+      } else if ("," === l && s) l = row[++i] = "";
+      else if ("\n" === l && s) {
+        if (p === "\r") row[i] = row[i].slice(0, -1);
+        row = ret[++r] = [(l = "")];
+        i = 0;
+      } else row[i] += l;
+      p = l;
+    }
+    return ret;
+  }
+
+  // เริ่มต้น
+  fetchData();
+</script>
+{% endblock %}
