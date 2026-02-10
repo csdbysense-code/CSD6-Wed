@@ -204,7 +204,7 @@ th {
   position: relative;
   width: 100%;
   height: 800px; /* ปรับความสูงตามต้องการ */
-  background-image: url("https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/625385647_943935948139943_32902351512880655_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3eHIxPCnGeYQ7kNvwGg0WX8&_nc_oc=AdncoaaEP9YTQl6SN8IEgm4ldGNEYZddSW7ckQtC3A531aPvq9_AUjFGqsc0wUqnf_4&_nc_zt=23&_nc_ht=scontent.fbkk5-5.fna&_nc_gid=Iw7LDnUv3EDSFrNbg0B0EQ&oh=00_Afux6Aprn9WudgUowksX3GfRMBsR-rUyEG8RFu24f4BEQQ&oe=69889BD8"); /* ใส่ชื่อไฟล์ภาพ image_b1f584.jpg */
+  background-image: url("../images/index_logo.jpg"); /* ใส่ชื่อไฟล์ภาพ image_b1f584.jpg */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -318,6 +318,28 @@ th {
     width: 90%;
     height: 250px;
   }
+  .container {
+        flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+        padding: 20px;         /* ลดช่องว่างขอบลง */
+    }
+
+    .content {
+        width: 100%;           /* ยืดให้เต็มหน้าจอ */
+    }
+
+    body {
+        font-size: 16px;       /* ปรับขนาดตัวอักษรให้พอดีกับนิ้วมือ */
+    }
+    .footer-container {
+        flex-direction: column; 
+        align-items: center;    /* จัดให้อยู่ตรงกลางหน้าจอ */
+        text-align: center;
+    }
+    
+    .footer-item {
+        width: 100%;           /* ให้แต่ละส่วนกว้างเต็มจอ */
+        margin-bottom: 20px;    /* เพิ่มระยะห่างระหว่างชั้น */
+    }
 }
 /* --- News Grid Layout --- */
 .news-grid {

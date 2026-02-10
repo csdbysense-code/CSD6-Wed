@@ -1,9 +1,5 @@
 import os
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host='0.0.0.0', port=port)
-
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -38,3 +34,7 @@ def login():
 
 if __name__ == "__main__":
     app.run(debug=True) # เปิดโหมด debug เพื่อให้เว็บอัปเดตอัตโนมัติเวลาเราแก้โค้ด
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
