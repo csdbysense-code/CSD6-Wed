@@ -212,7 +212,7 @@ th {
   justify-content: center;
   color: #ffffff;
   text-align: center;
-    /* ทำให้เป็นสีขาวดำ 100% */
+  /* ทำให้เป็นสีขาวดำ 100% */
   filter: grayscale(100%);
   /* เพิ่ม transition เพื่อให้การเปลี่ยนสีดูนุ่มนวล */
   transition: filter 0.3s ease;
@@ -302,22 +302,22 @@ th {
   .map-wrapper {
     min-height: 300px;
     order: -1; /* เอาแผนที่ขึ้นก่อนบนมือถือ (Optional) */
-      }
+  }
   .main-container {
-                flex-direction: column;
-                align-items: center;
-                height: auto;
-                padding-top: 50px;
-                padding-bottom: 50px;
-            }
-            body {
-                height: auto;
-                overflow-y: auto;
-            }
-            .portal-card {
-                width: 90%;
-                height: 250px;
-            }    
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
+  .portal-card {
+    width: 90%;
+    height: 250px;
+  }
 }
 /* --- News Grid Layout --- */
 .news-grid {
@@ -1088,102 +1088,104 @@ iframe {
   border: 0;
 }
 .main-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            padding: 20px;
-            width: 100%;
-            flex-wrap: wrap; /* ให้พับลงมาเมื่อจอเล็ก */
-            z-index: 10;
-            
-        }
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+  width: 100%;
+  flex-wrap: wrap; /* ให้พับลงมาเมื่อจอเล็ก */
+  z-index: 10;
+}
 
-        /* การ์ดลิ้งค์ */
-        .portal-card {
-            flex: 1;
-            min-width: 300px;
-            max-width: 450px;
-            height: 320px;
-            background: rgba(255, 255, 255, 0.03); /* พื้นหลังใส */
-            border: 1px solid rgba(255, 215, 0, 0.1); /* ขอบสีทองจางๆ */
-            border-radius: 4px; /* มุมเหลี่ยมเล็กน้อยให้ดูแข็งแกร่ง */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+/* การ์ดลิ้งค์ */
+.portal-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.03); /* พื้นหลังใส */
+  border: 1px solid rgba(255, 215, 0, 0.1); /* ขอบสีทองจางๆ */
+  border-radius: 4px; /* มุมเหลี่ยมเล็กน้อยให้ดูแข็งแกร่ง */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
 
-        /* ตกแต่งมุมการ์ด (Corner Accents) เพื่อความดุดัน */
-        .portal-card::before, .portal-card::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
-        }
+/* ตกแต่งมุมการ์ด (Corner Accents) เพื่อความดุดัน */
+.portal-card::before,
+.portal-card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
 
-        /* มุมบนซ้าย */
-        .portal-card::before {
-            top: -1px;
-            left: -1px;
-            border-top-color: #ffd700; /* สีทอง */
-            border-left-color: #ffd700;
-        }
+/* มุมบนซ้าย */
+.portal-card::before {
+  top: -1px;
+  left: -1px;
+  border-top-color: #ffd700; /* สีทอง */
+  border-left-color: #ffd700;
+}
 
-        /* มุมล่างขวา */
-        .portal-card::after {
-            bottom: -1px;
-            right: -1px;
-            border-bottom-color: #ffd700;
-            border-right-color: #ffd700;
-        }
+/* มุมล่างขวา */
+.portal-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom-color: #ffd700;
+  border-right-color: #ffd700;
+}
 
-        /* จัดการรูปภาพโลโก้ */
-        .logo-img {
-            max-width: 80%;
-            max-height: 150px;
-            object-fit: contain;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 5px rgba(0,0,0,0.8));
-            transition: transform 0.4s ease;
-        }
+/* จัดการรูปภาพโลโก้ */
+.logo-img {
+  max-width: 80%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
+  transition: transform 0.4s ease;
+}
 
-        /* ข้อความใต้โลโก้ */
-        .card-text {
-            color: #ccc;
-            font-size: 1.2rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: color 0.3s;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
+/* ข้อความใต้โลโก้ */
+.card-text {
+  color: #ccc;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-        .sub-text {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 5px;
-            font-weight: 300;
-        }
+.sub-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+  font-weight: 300;
+}
 
-        /* --- Hover Effects (เมื่อเอาเมาส์ชี้) --- */
-        .portal-card:hover {
-            background: rgba(255, 215, 0, 0.05); /* พื้นหลังเปลี่ยนเป็นสีทองจางๆ */
-            border-color: rgba(255, 215, 0, 0.6);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 20px rgba(255, 215, 0, 0.1); /* แสงเรือง */
-        }
+/* --- Hover Effects (เมื่อเอาเมาส์ชี้) --- */
+.portal-card:hover {
+  background: rgba(255, 215, 0, 0.05); /* พื้นหลังเปลี่ยนเป็นสีทองจางๆ */
+  border-color: rgba(255, 215, 0, 0.6);
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.1); /* แสงเรือง */
+}
 
-        .portal-card:hover .logo-img {
-            transform: scale(1.1); /* ขยายรูป */
-        }
+.portal-card:hover .logo-img {
+  transform: scale(1.1); /* ขยายรูป */
+}
 
-        .portal-card:hover .card-text {
-            color: #ffd700; /* เปลี่ยนตัวหนังสือเป็นสีทอง */
-        }
+.portal-card:hover .card-text {
+  color: #ffd700; /* เปลี่ยนตัวหนังสือเป็นสีทอง */
+}
