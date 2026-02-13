@@ -28,9 +28,10 @@ def advertise():
 def contact():
     return render_template("contact.html")
 
-@app.route("/templates/login.html")
-def login():
-    return render_template("login.html")
+@app.route('/privacy-policy')
+def privacy():
+    # จะไปเรียกไฟล์ templates/privacy_policy.html
+    return render_template('privacy_policy.html')
 
 if __name__ == "__main__":
     app.run(debug=True) # เปิดโหมด debug เพื่อให้เว็บอัปเดตอัตโนมัติเวลาเราแก้โค้ด
