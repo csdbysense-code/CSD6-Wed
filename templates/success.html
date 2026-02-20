@@ -86,7 +86,7 @@ content %}
             title: row[COL_TITLE],
             displayDate: row[COL_DATE],
             link: row[COL_LINK],
-            image: row[COL_IMG],
+            image: processImageUrl(row[COL_IMG]), // แปลงลิ้งค์รูปภาพ
           };
         })
         .filter((item) => item && item.title);
@@ -171,8 +171,8 @@ content %}
 
       const cardHtml = `
                     <a href="${linkUrl}" class="news-card" ${targetAttr}>
-                        <div class="card-image">
-                            <img src="${imgUrl}" alt="${item.title}" loading="lazy">
+                        <div class="card-image ">
+                            <img src="${imgUrl}" alt="${item.title}" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=No+Image'">
                         </div>
                         <div class="card-content">
                             <span class="card-date">${dateTxt}</span>
@@ -184,10 +184,42 @@ content %}
     });
   }
 
+function processImageUrl(url) {
+  // 1. ถ้าไม่มี URL ให้คืนค่ารูป Default
+  if (!url || url.trim() === "") {
+    return "https://media.istockphoto.com/id/1443200221/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B9%84%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B9%82%E0%B8%9F%E0%B8%A5%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%9F%E0%B9%89%E0%B8%A1%E0%B9%83%E0%B8%99%E0%B8%AA%E0%B9%84%E0%B8%95%E0%B8%A5%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%95%E0%B8%B9%E0%B8%99-%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A%E0%B9%80%E0%B8%A7%E0%B8%81%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%95%E0%B8%B9%E0%B8%99%E0%B8%9A%E0%B8%99%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B9%81%E0%B8%A2%E0%B8%81-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94.jpg?s=170667a&w=0&k=20&c=M2-rjizWhd1_DlwVtRG3nAEc0fVWo8CQgSseSWFTSAo=";
+  }
+
+  url = url.trim();
+
+  // 2. ตรวจสอบว่าเป็น Google Drive หรือไม่
+  if (url.includes("drive.google.com")) {
+    let fileId = "";
+
+    // ใช้ Regex ค้นหา ID ของไฟล์ (จะรองรับทั้ง /d/ID/view และ id=ID)
+    const regExp = /\/d\/([^\/]+)|id=([^&]+)/;
+    const match = url.match(regExp);
+
+    if (match) {
+      // ถ้าเจอในรูปแบบ /d/ID/ ค่าจะอยู่ใน match[1] ถ้าเจอแบบ id=ID ค่าจะอยู่ใน match[2]
+      fileId = match[1] || match[2];
+    }
+
+    if (fileId) {
+      // ✅ เปลี่ยนมาใช้ Google Drive Thumbnail API เพื่อให้รูปภาพแสดงผลได้
+      // sz=w800 คือการกำหนดความกว้างของรูป หากต้องการให้ชัดขึ้นสามารถปรับเป็น w1000 ได้
+      return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+    }
+  }
+
+  // 3. ถ้าไม่ใช่ Drive หรือหา ID ไม่เจอ ให้คืนค่าเดิม
+  return url;
+}
+
   // CSV Parser
   function csvToArray(text) {
     let p = "",
-      row = [""],
+      row = [" "],
       ret = [row],
       i = 0,
       r = 0,
