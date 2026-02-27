@@ -1,43 +1,9 @@
 {% extends "layout.html" %} {% block title %}เกี่ยวกับเรา{% endblock %} {% block
 content %}
-<section
-    class="black-image"
-    class="black-image:hover"   
-    style="
-    background: url(../static/images/page2-5.jpg)
-    no-repeat center/cover;
-    height: 425px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    opacity: 1;
-    "
->
+<section class="page-banner">
   <div>
-    <h2
-      style="
-        font-size: 4rem;
-        color: #ffffff;
-        text-shadow: 10px 10px 40px rgb(0, 0, 0);
-      "
-    >
-      WE ARE CSD SIX
-    </h2>
-    <p
-      style="
-        font-size: 2rem;
-        margin-top: -30px;
-        color: #ffd300;
-        text-shadow: 10px 10px 40px #000000;
-        font-weight: bold;
-        text-decoration: underline;
-        "
-    >
-      About Us
-    </p>
-    
+    <h2>WE ARE CSD SIX</h2>
+    <p class="banner-subtitle">About Us</p>
   </div>
 </section>
 
@@ -78,8 +44,7 @@ content %}
         กลายเป็นที่พึ่งของประชาชนในคดีที่ซับซ้อนและเกี่ยวข้องกับผู้มีอิทธิพล
       </p>
 
-      <hr
-        style="
+      <hr style="
           border: 0;
           height: 1px;
           background-image: linear-gradient(
@@ -89,8 +54,7 @@ content %}
             rgba(0, 0, 0, 0)
           );
           margin: 30px 0;
-        "
-      />
+        " />
 
       <h3>โครงสร้างและภารกิจหลัก</h3>
       <p>
@@ -117,8 +81,7 @@ content %}
         </li>
       </ul>
 
-      <hr
-        style="
+      <hr style="
           border: 0;
           height: 1px;
           background-image: linear-gradient(
@@ -128,8 +91,7 @@ content %}
             rgba(0, 0, 0, 0)
           );
           margin: 30px 0;
-        "
-      />
+        " />
 
       <h3>กองกำกับการ 6 กองบังคับการปราบปราม : พยัคฆ์แดนใต้</h3>
       <p>
@@ -164,36 +126,27 @@ content %}
         <p style="font-size: 1.1em; font-weight: 500">
           จาก พ.ศ. 2491 ถึงปัจจุบัน... ไม่ว่าเวลาจะผ่านไปนานเพียงใด <br />
           คำขวัญที่ว่า
-          <span style="color: #b8860b; font-weight: bold; font-size: 1.2em"
-            >“ที่พึ่งสุดท้ายที่หมายพึ่ง”</span
-          >
+          <span style="color: #b8860b; font-weight: bold; font-size: 1.2em">“ที่พึ่งสุดท้ายที่หมายพึ่ง”</span>
           <br />
           จะยังคงถูกสลักอยู่ในใจของเจ้าหน้าที่ กก.6 บก.ป. ทุกนาย
         </p>
 
-        <div
-          style="
+        <div style="
             margin: 30px auto;
             padding: 10px;
             background: #fff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             max-width: 600px;
-          "
-        >
-        
-          <img
-            src="../static/images/about1.jpg"
-            alt="เจ้าหน้าที่กองกำกับการ 6 ปฏิบัติหน้าที่"
-            class="black-image"
-            class="black-image:hover"
+          ">
+
+          <img src="../static/images/about1.jpg" alt="เจ้าหน้าที่กองกำกับการ 6 ปฏิบัติหน้าที่" class="black-image"
             style="
               width: 100%;
               height: auto;
               border-radius: 4px;
-              display: block;
-            "
-          />
+              display: block; 
+            " loading="lazy" />
           <p style="margin-top: 10px; font-size: 0.9em; color: #666">
             มุ่งมั่นปฏิบัติหน้าที่ด้วยความซื่อสัตย์สุจริตและเป็นธรรม
           </p>
@@ -262,28 +215,21 @@ content %}
             หรือตามที่ได้รับมอบหมาย
           </li>
         </ul>
-        <div
-          style="
+        <div style="
             margin: 30px auto;
             padding: 10px;
             background: #fff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             max-width: 600px;
-          "
-        >
-          <img
-            src="../static/images/about2.jpg"
-            alt="เจ้าหน้าที่กองกำกับการ 6 ปฏิบัติหน้าที่"
-            class="black-image"
-            class="black-image:hover"
+          ">
+          <img src="../static/images/about2.jpg" alt="เจ้าหน้าที่กองกำกับการ 6 ปฏิบัติหน้าที่" class="black-image"
             style="
               width: 100%;
               height: auto;
               border-radius: 4px;
               display: block;
-            "
-          />
+            " loading="lazy" />
           <p style="margin-top: 10px; font-size: 0.9em; color: #666">
             กองกำกับการ 6 กองบังคับการปราบปราม กองบัญชาการตำรวจสอบสวนกลาง <strong>(CSD 6 CIB)</strong>
           </p>
@@ -291,8 +237,8 @@ content %}
       </div>
     </div>
 
-  <div id="commanders" class="content-section">
-    <h2>ผู้บังคับบัญชา</h2>
+    <div id="commanders" class="content-section">
+      <h2>ผู้บังคับบัญชา</h2>
       <p style="text-align: center; margin-bottom: 30px">
         โครงสร้างการบังคับบัญชา กองกำกับการ 6 กองบังคับการปราบปราม
       </p>
@@ -303,7 +249,7 @@ content %}
       <p style="text-align: center; margin-top: 30px; font-size: 0.9em; color: #888;">
         *ข้อมูลผู้บังคับบัญชาอาจมีการเปลี่ยนแปลงตามวาระการแต่งตั้ง
       </p>
-  </div>
+    </div>
 
 </main>
 
@@ -335,26 +281,26 @@ content %}
   }
 
 
-// ฟังก์ชันรัน โครงสร้างผู้บังคับบัญชาจาก Google Sheets
+  // ฟังก์ชันรัน โครงสร้างผู้บังคับบัญชาจาก Google Sheets
   // 1. ใส่ Google Sheet ID ของคุณที่นี่
-  const sheetId = '1XW51ZiRuXKo15D1rXYNjViCqsf_InhlFZJ0oTvWKFrw'; 
-  
+  const sheetId = '1XW51ZiRuXKo15D1rXYNjViCqsf_InhlFZJ0oTvWKFrw';
+
   // URL สำหรับดึงข้อมูลแบบ JSON
   const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
 
-// ฟังก์ชันแปลงลิงก์ Google Drive (ฉบับแก้ไข แก้ 404)
+  // ฟังก์ชันแปลงลิงก์ Google Drive (ฉบับแก้ไข แก้ 404)
   function convertDriveImageLink(url) {
     if (!url) return '';
-    
+
     // Regex ใหม่: ดึง ID แบบระบุตัวอักษรที่อนุญาต (กันความผิดพลาด)
     // รองรับทั้ง /file/d/ID/view และ /file/d/ID เฉยๆ
     const driveMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-    
+
     if (driveMatch && driveMatch[1]) {
       // ใช้ลิงก์แบบ Thumbnail แทน (sz=w1000 คือขอรูปความกว้าง 1000px เพื่อความชัด)
       return `https://drive.google.com/thumbnail?id=${driveMatch[1]}&sz=w1000`;
     }
-    
+
     return url;
   }
 
@@ -362,11 +308,11 @@ content %}
     try {
       const response = await fetch(sheetUrl);
       const text = await response.text();
-      
+
       // Google Sheet ส่งค่ามาติด text prefix ต้องลบออกเพื่อให้เป็น JSON แท้
       const jsonText = text.substring(47).slice(0, -2);
       const json = JSON.parse(jsonText);
-      
+
       const rows = json.table.rows;
       const commanders = {
         chief: [],
@@ -377,7 +323,7 @@ content %}
       // วนลูปจัดข้อมูลเข้ากลุ่ม
       rows.forEach(row => {
         // c[0] = group, c[1] = rank, c[2] = name, c[3] = position, c[4] = image
-        
+
         // ดึงค่า URL เดิมมาจาก Google Sheet
         const rawImageUrl = row.c[4]?.v || '';
 
@@ -389,7 +335,7 @@ content %}
           // เรียกใช้ฟังก์ชันแปลงลิงก์ที่นี่
           image: convertDriveImageLink(rawImageUrl)
         };
-        
+
         if (commanders[data.group]) {
           commanders[data.group].push(data);
         }
@@ -409,10 +355,10 @@ content %}
 
     // ฟังก์ชันสร้าง HTML การ์ดแต่ละใบ
     const createCard = (person, isChief = false) => {
-      const imgHtml = person.image 
+      const imgHtml = person.image
         ? `<img src="${person.image}" alt="รูป ${person.position}" style="width: 150px; height: 200px; object-fit: cover;">`
         : `<span>(รูปภาพ)</span>`;
-      
+
       const imgStyle = person.image ? '' : 'display: flex; align-items: center; justify-content: center;';
 
       return `

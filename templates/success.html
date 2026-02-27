@@ -1,42 +1,9 @@
 {% extends "layout.html" %} {% block title %}ผลงาน{% endblock %} {% block
 content %}
-<section
-  class="black-image"
-  class="black-image:hover"
-  style="
-    background: url(../static/images/page2-5.jpg)
-      no-repeat center/cover;
-    height: 425px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    opacity: 1;
-  "
->
+<section class="page-banner">
   <div>
-    <h2
-      style="
-        font-size: 4rem;
-        color: #ffffff;
-        text-shadow: 10px 10px 40px rgb(0, 0, 0);
-      "
-    >
-      การปฏิบัติที่ประจักษ์
-    </h2>
-    <p
-      style="
-        font-size: 2rem;
-        margin-top: -18px;
-        color: #ffd300;
-        text-shadow: 10px 10px 40px #000000;
-        font-weight: bold;
-        text-decoration: underline;
-      "
-    >
-      ACHIEVEMENT
-    </p>
+    <h2>การปฏิบัติที่ประจักษ์</h2>
+    <p class="banner-subtitle">ACHIEVEMENT</p>
   </div>
 </section>
 <main>
@@ -184,19 +151,19 @@ content %}
     });
   }
 
-// ฟังก์ชันแปลงลิงก์ Google Drive (ฉบับแก้ไข แก้ 404)
+  // ฟังก์ชันแปลงลิงก์ Google Drive (ฉบับแก้ไข แก้ 404)
   function convertDriveImageLink(url) {
     if (!url) return '';
-    
+
     // Regex ใหม่: ดึง ID แบบระบุตัวอักษรที่อนุญาต (กันความผิดพลาด)
     // รองรับทั้ง /file/d/ID/view และ /file/d/ID เฉยๆ
     const driveMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-    
+
     if (driveMatch && driveMatch[1]) {
       // ใช้ลิงก์แบบ Thumbnail แทน (sz=w1000 คือขอรูปความกว้าง 1000px เพื่อความชัด)
       return `https://drive.google.com/thumbnail?id=${driveMatch[1]}&sz=w1000`;
     }
-    
+
     return url;
   }
 

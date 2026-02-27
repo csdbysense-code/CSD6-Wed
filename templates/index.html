@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block title %}หน้าหลัก{% endblock %} {% block
+{% extends "layout.html" %} {% block title %}กองกำกับการ 6 กองบังคับการปราบปราม{% endblock %} {% block
 content %}
 <section class="hero-banner"> >
 
@@ -16,120 +16,123 @@ content %}
       </p>
     </div>
   </div>
-  
+
 </section>
 <main class="main-container">
   <a href="https://www.cib.go.th/" target="_blank" class="portal-card">
-    <img
-      src="https://www.cib.go.th/uploads/logo_cib_lable_yellow_e5657fbe6b_0205329682.png"
-      alt="CIB Logo"
-      class="logo-img"
-    />
+    <img src="https://www.cib.go.th/uploads/logo_cib_lable_yellow_e5657fbe6b_0205329682.png" alt="CIB Logo"
+      class="logo-img" />
     <div class="card-text">CIB Website</div>
     <div class="sub-text">เว็บไซต์หลักตำรวจสอบสวนกลาง</div>
   </a>
 
   <a href="https://csd.cib.go.th/home" target="_blank" class="portal-card">
-    <img
-      src="https://cib.go.th/backend/uploads/medium_logo_cib_2_2x_1be93f4a36_dc4193cba8.png"
-      alt="CSD Logo"
-      class="logo-img"
-    />
+    <img src="https://cib.go.th/backend/uploads/medium_logo_cib_2_2x_1be93f4a36_dc4193cba8.png" alt="CSD Logo"
+      class="logo-img" />
     <div class="card-text">CSD Website</div>
     <div class="sub-text">เว็บไซต์หลักกองบังคับการปราบปราม</div>
   </a>
 </main>
 
 <style>
-    /* ส่วนตกแต่ง (CSS) */
+  /* ส่วนตกแต่ง (CSS) */
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    /* สีพื้นหลัง (เปลี่ยนได้) */
+    color: #ffffff;
+    /* สีตัวอักษร */
+    padding: 15px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    /* ซ่อนไว้ก่อน เดี๋ยวให้ JS สั่งแสดง */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 9999;
+    /* ให้ลอยอยู่เหนือทุกอย่าง */
+    font-family: 'Sarabun', sans-serif;
+    /* ฟอนต์ภาษาไทย (ถ้ามี) */
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  #cookie-banner p {
+    margin: 0;
+    padding-right: 20px;
+    max-width: 800px;
+  }
+
+  #cookie-banner a {
+    color: #f1c40f;
+    /* สีลิ้งค์ */
+    text-decoration: underline;
+  }
+
+  #cookie-banner button {
+    background-color: #27ae60;
+    /* สีปุ่ม */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+  }
+
+  #cookie-banner button:hover {
+    background-color: #219150;
+    /* สีปุ่มตอนเอาเมาส์ชี้ */
+  }
+
+  /* ปรับแต่งสำหรับมือถือ */
+  @media (max-width: 600px) {
     #cookie-banner {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #2c3e50; /* สีพื้นหลัง (เปลี่ยนได้) */
-        color: #ffffff; /* สีตัวอักษร */
-        padding: 15px 20px;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-        display: none; /* ซ่อนไว้ก่อน เดี๋ยวให้ JS สั่งแสดง */
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        z-index: 9999; /* ให้ลอยอยู่เหนือทุกอย่าง */
-        font-family: 'Sarabun', sans-serif; /* ฟอนต์ภาษาไทย (ถ้ามี) */
-        font-size: 14px;
-        line-height: 1.5;
+      flex-direction: column;
+      text-align: center;
     }
 
     #cookie-banner p {
-        margin: 0;
-        padding-right: 20px;
-        max-width: 800px;
+      padding-right: 0;
+      margin-bottom: 10px;
     }
-
-    #cookie-banner a {
-        color: #f1c40f; /* สีลิ้งค์ */
-        text-decoration: underline;
-    }
-
-    #cookie-banner button {
-        background-color: #27ae60; /* สีปุ่ม */
-        color: white;
-        border: none;
-        padding: 8px 20px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: bold;
-        white-space: nowrap;
-        transition: background-color 0.3s;
-    }
-
-    #cookie-banner button:hover {
-        background-color: #219150; /* สีปุ่มตอนเอาเมาส์ชี้ */
-    }
-
-    /* ปรับแต่งสำหรับมือถือ */
-    @media (max-width: 600px) {
-        #cookie-banner {
-            flex-direction: column;
-            text-align: center;
-        }
-        #cookie-banner p {
-            padding-right: 0;
-            margin-bottom: 10px;
-        }
-    }
+  }
 </style>
 
 <div id="cookie-banner">
-    <p>
-        เว็บไซต์นี้ใช้คุกกี้เพื่อวัตถุประสงค์ในการปรับปรุงประสบการณ์ของผู้ใช้ให้ดียิ่งขึ้น 
-        ท่านสามารถศึกษารายละเอียดเพิ่มเติมได้ที่ 
-        <a href="{{ url_for('privacy') }}" target="_blank">นโยบายความเป็นส่วนตัว</a>
-    </p>
-    <button id="accept-cookie-btn">รับทราบ</button>
+  <p>
+    เว็บไซต์นี้ใช้คุกกี้เพื่อวัตถุประสงค์ในการปรับปรุงประสบการณ์ของผู้ใช้ให้ดียิ่งขึ้น
+    ท่านสามารถศึกษารายละเอียดเพิ่มเติมได้ที่
+    <a href="{{ url_for('privacy') }}" target="_blank">นโยบายความเป็นส่วนตัว</a>
+  </p>
+  <button id="accept-cookie-btn">รับทราบ</button>
 </div>
 
 <script>
-    // ส่วนการทำงาน (JavaScript)
-    document.addEventListener("DOMContentLoaded", function() {
-        var banner = document.getElementById("cookie-banner");
-        var btn = document.getElementById("accept-cookie-btn");
-        
-        // ตรวจสอบว่าเคย "รับทราบ" ไปหรือยัง
-        if (!localStorage.getItem("cookieConsent")) {
-            // ถ้ายังไม่เคย ให้แสดง Banner (ใช้ Flex เพื่อจัดกึ่งกลาง)
-            banner.style.display = "flex"; 
-        }
+  // ส่วนการทำงาน (JavaScript)
+  document.addEventListener("DOMContentLoaded", function () {
+    var banner = document.getElementById("cookie-banner");
+    var btn = document.getElementById("accept-cookie-btn");
 
-        // เมื่อกดปุ่ม "รับทราบ"
-        btn.addEventListener("click", function() {
-            // บันทึกสถานะลงในเครื่องผู้ใช้
-            localStorage.setItem("cookieConsent", "true");
-            // ซ่อน Banner
-            banner.style.display = "none";
-        });
+    // ตรวจสอบว่าเคย "รับทราบ" ไปหรือยัง
+    if (!localStorage.getItem("cookieConsent")) {
+      // ถ้ายังไม่เคย ให้แสดง Banner (ใช้ Flex เพื่อจัดกึ่งกลาง)
+      banner.style.display = "flex";
+    }
+
+    // เมื่อกดปุ่ม "รับทราบ"
+    btn.addEventListener("click", function () {
+      // บันทึกสถานะลงในเครื่องผู้ใช้
+      localStorage.setItem("cookieConsent", "true");
+      // ซ่อน Banner
+      banner.style.display = "none";
     });
+  });
 </script>
 {% endblock %}

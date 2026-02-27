@@ -1,42 +1,9 @@
 {% extends "layout.html" %} {% block title %}ติดต่อเรา{% endblock %} {% block
 content %}
-<section
-  class="black-image"
-  class="black-image:hover"
-  style="
-    background: url(../static/images/page2-5.jpg)
-      no-repeat center/cover;
-    height: 425px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    opacity: 1;
-  "
->
+<section class="page-banner">
   <div>
-    <h2
-      style="
-        font-size: 4rem;
-        color: #ffffff;
-        text-shadow: 10px 10px 40px rgb(0, 0, 0);
-      "
-    >
-      ติดต่อเรา
-    </h2>
-    <p
-      style="
-        font-size: 2rem;
-        margin-top: -30px;
-        color: #ffd300;
-        text-shadow: 10px 10px 40px #000000;
-        font-weight: bold;
-        text-decoration: underline;
-      "
-    >
-      CONTACT
-    </p>
+    <h2>ติดต่อเรา</h2>
+    <p class="banner-subtitle">CONTACT</p>
   </div>
 </section>
 <main>
@@ -55,15 +22,8 @@ content %}
               1096 กองบังคับการปราบปราม ถนนพหลโยธิน <br />
               แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร 10900
             </span>
-            <a
-              href="https://maps.app.goo.gl/wnUEYN1KhSEo67LQ9"
-              target="_blank"
-              class="btn-map"
-            >
-              <i
-                class="fa-solid fa-map-location-dot"
-                style="margin-right: 8px"
-              ></i>
+            <a href="https://maps.app.goo.gl/wnUEYN1KhSEo67LQ9" target="_blank" class="btn-map" loading="lazy">
+              <i class="fa-solid fa-map-location-dot" style="margin-right: 8px"></i>
               ดูแผนที่ Google Map
             </a>
           </div>
@@ -73,14 +33,9 @@ content %}
           <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
           <div class="info-content">
             <h3>อีเมล</h3>
-            <a href="mailto:saraban_csd.cib@police.go.th" id="email-link"
-              >saraban_csd.cib@police.go.th</a
-            >
+            <a href="mailto:saraban_csd.cib@police.go.th" id="email-link">saraban_csd.cib@police.go.th</a>
             <br />
-            <small
-              style="color: #999; cursor: pointer; text-decoration: underline"
-              onclick="copyEmail()"
-            >
+            <small style="color: #999; cursor: pointer; text-decoration: underline" onclick="copyEmail()">
               (คลิกเพื่อคัดลอกอีเมล)
             </small>
           </div>
@@ -99,26 +54,12 @@ content %}
           <div class="info-content">
             <h3>ติดตามข่าวสาร (Facebook)</h3>
             <div class="social-group">
-              <a
-                href="https://www.facebook.com/CIBTHAILAND"
-                target="_blank"
-                class="btn-map"
-              >
-                <i
-                  class="fa-brands fa-facebook-square"
-                  style="color: #00264b; margin-right: 5px"
-                ></i>
+              <a href="https://www.facebook.com/CIBTHAILAND" target="_blank" class="btn-map">
+                <i class="fa-brands fa-facebook-square" style="color: #00264b; margin-right: 5px"></i>
                 CIB THAILAND
               </a>
-              <a
-                href="https://www.facebook.com/csdthai?locale=th_TH"
-                target="_blank"
-                class="btn-map"
-              >
-                <i
-                  class="fa-brands fa-facebook-square"
-                  style="color: #00264b; margin-right: 5px"
-                ></i>
+              <a href="https://www.facebook.com/csdthai?locale=th_TH" target="_blank" class="btn-map">
+                <i class="fa-brands fa-facebook-square" style="color: #00264b; margin-right: 5px"></i>
                 กองปราบปราม
               </a>
             </div>
@@ -129,17 +70,9 @@ content %}
       <div class="map-wrapper">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4698.35668490979!2d100.56328620924629!3d13.819495282130639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29c573553629b%3A0x9b41a8000e2cd6bd!2z4LiB4Lit4LiH4Lia4Lix4LiH4LiE4Lix4Lia4LiB4Liy4Lij4Lib4Lij4Liy4Lia4Lib4Lij4Liy4LihICjguJrguIEu4LibLik!5e1!3m2!1sth!2sth!4v1770476817147!5m2!1sth!2sth"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="แผนที่กองบังคับการปราบปราม"
-        >
+          width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="แผนที่กองบังคับการปราบปราม">
         </iframe>
       </div>
     </div>

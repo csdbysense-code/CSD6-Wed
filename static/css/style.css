@@ -2,9 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap");
 
 :root {
-  --primary-color: #00264b; /* สีน้ำเงินเข้มราชการ */
-  --secondary-color: #0056b3; /* สีน้ำเงินสว่าง */
-  --accent-color: #ffd300; /* สีทองสำหรับเน้น */
+  --primary-color: #00264b;
+  /* สีน้ำเงินเข้มราชการ */
+  --secondary-color: #0056b3;
+  /* สีน้ำเงินสว่าง */
+  --accent-color: #ffd300;
+  /* สีทองสำหรับเน้น */
   --bg-color: #f4f4f4;
   --bg-light: #f4f6f9;
   --text-color: #333;
@@ -12,7 +15,8 @@
   --text-light: #666666;
   --white: #ffffff;
   --sidebar-width: 250px;
-  --border-radius: 4px; /* มุมโค้งเล็กน้อย ดูทางการ */
+  --border-radius: 4px;
+  /* มุมโค้งเล็กน้อย ดูทางการ */
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -35,6 +39,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 ul {
   list-style: none;
 }
@@ -64,7 +69,8 @@ ul {
   padding: 20px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  border-top: 3px solid var(--primary-color); /* Signature ราชการ */
+  border-top: 3px solid var(--primary-color);
+  /* Signature ราชการ */
 }
 
 /* --- Layout: Header & Nav (Public) --- */
@@ -124,11 +130,9 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
 }
 
 .login-box {
@@ -171,17 +175,20 @@ header {
 .table-responsive {
   overflow-x: auto;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
   background: var(--white);
 }
+
 th,
 td {
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
+
 th {
   background-color: #f8f9fa;
   color: var(--primary-color);
@@ -203,8 +210,10 @@ th {
 .hero-banner {
   position: relative;
   width: 100%;
-  height: 800px; /* ปรับความสูงตามต้องการ */
-  background-image: url("../images/index_logo.jpg"); /* ใส่ชื่อไฟล์ภาพ image_b1f584.jpg */
+  height: 800px;
+  /* ปรับความสูงตามต้องการ */
+  background-image: url("../images/index_logo.jpg");
+  /* ใส่ชื่อไฟล์ภาพ image_b1f584.jpg */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -216,6 +225,7 @@ th {
   filter: grayscale(100%);
   /* เพิ่ม transition เพื่อให้การเปลี่ยนสีดูนุ่มนวล */
   transition: filter 0.3s ease;
+
 }
 
 /* เพิ่มเลเยอร์สีดำโปร่งแสงเพื่อให้ตัวหนังสือเด่น */
@@ -225,7 +235,8 @@ th {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* ดำ 40% */
+  background: rgba(0, 0, 0, 0.4);
+  /* ดำ 40% */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,7 +248,8 @@ th {
 }
 
 .hero-title {
-  font-size: 4rem; /* ขนาดใหญ่พิเศษ */
+  font-size: 4rem;
+  /* ขนาดใหญ่พิเศษ */
   font-weight: 800;
   letter-spacing: 2px;
   margin-bottom: 5px;
@@ -271,38 +283,52 @@ th {
     gap: 15px;
     text-align: center;
   }
+
   .hero-title {
     font-size: 2rem;
   }
+
   .hero-subtitle {
     font-size: 1.5rem;
   }
+
   .hero-banner {
     height: 300px;
   }
+
   .tab-btn {
-    flex: 1 1 100%; /* ปุ่มเรียงลงมาแนวตั้งในมือถือ */
+    flex: 1 1 100%;
+    /* ปุ่มเรียงลงมาแนวตั้งในมือถือ */
     border-bottom: 1px solid #eee;
   }
+
   .tab-btn.active {
     border-bottom: 4px solid var(--primary-color);
   }
+
   .card-grid {
     grid-template-columns: 1fr;
   }
+
   .filter-box {
     width: 100%;
   }
+
   .filter-box select {
     width: 100%;
   }
+
   .contact-container {
-    grid-template-columns: 1fr; /* เรียงเป็นแนวตั้ง */
+    grid-template-columns: 1fr;
+    /* เรียงเป็นแนวตั้ง */
   }
+
   .map-wrapper {
     min-height: 300px;
-    order: -1; /* เอาแผนที่ขึ้นก่อนบนมือถือ (Optional) */
+    order: -1;
+    /* เอาแผนที่ขึ้นก่อนบนมือถือ (Optional) */
   }
+
   .main-container {
     flex-direction: column;
     align-items: center;
@@ -310,43 +336,56 @@ th {
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
   body {
     height: auto;
     overflow-y: auto;
   }
+
   .portal-card {
     width: 90%;
     height: 250px;
   }
+
   .container {
-        flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
-        padding: 20px;         /* ลดช่องว่างขอบลง */
-    }
+    flex-direction: column;
+    /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+    padding: 20px;
+    /* ลดช่องว่างขอบลง */
+  }
 
-    .content {
-        width: 100%;           /* ยืดให้เต็มหน้าจอ */
-    }
+  .content {
+    width: 100%;
+    /* ยืดให้เต็มหน้าจอ */
+  }
 
-    body {
-        font-size: 16px;       /* ปรับขนาดตัวอักษรให้พอดีกับนิ้วมือ */
-    }
-    .footer-container {
-        flex-direction: column; 
-        align-items: center;    /* จัดให้อยู่ตรงกลางหน้าจอ */
-        text-align: center;
-    }
-    
-    .footer-item {
-        width: 100%;           /* ให้แต่ละส่วนกว้างเต็มจอ */
-        margin-bottom: 20px;    /* เพิ่มระยะห่างระหว่างชั้น */
-    }
+  body {
+    font-size: 16px;
+    /* ปรับขนาดตัวอักษรให้พอดีกับนิ้วมือ */
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    /* จัดให้อยู่ตรงกลางหน้าจอ */
+    text-align: center;
+  }
+
+  .footer-item {
+    width: 100%;
+    /* ให้แต่ละส่วนกว้างเต็มจอ */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างระหว่างชั้น */
+  }
 }
+
 /* --- News Grid Layout --- */
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
 }
+
 .news-grid.fade-in {
   opacity: 1;
 }
@@ -410,7 +449,8 @@ header p {
   transition:
     transform 0.2s,
     box-shadow 0.2s;
-  text-decoration: none; /* ลิงค์ไม่มีขีดเส้นใต้ */
+  text-decoration: none;
+  /* ลิงค์ไม่มีขีดเส้นใต้ */
   color: inherit;
   display: flex;
   flex-direction: column;
@@ -434,7 +474,8 @@ header p {
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ให้ภาพเต็มพื้นที่โดยไม่เสียสัดส่วน */
+  object-fit: cover;
+  /* ให้ภาพเต็มพื้นที่โดยไม่เสียสัดส่วน */
 }
 
 /* ส่วนเนื้อหาในการ์ด */
@@ -503,12 +544,14 @@ header p {
 
 /* เนื้อหาในแต่ละส่วน */
 .content-section {
-  display: none; /* ซ่อนไว้ก่อน */
+  display: none;
+  /* ซ่อนไว้ก่อน */
   animation: fadeIn 0.5s;
 }
 
 .content-section.active {
-  display: block; /* แสดงเมื่อถูกเลือก */
+  display: block;
+  /* แสดงเมื่อถูกเลือก */
 }
 
 @keyframes fadeIn {
@@ -516,6 +559,7 @@ header p {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -654,6 +698,7 @@ header p {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -667,19 +712,23 @@ header p {
   margin-bottom: 30px;
   text-align: right;
 }
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 25px;
 }
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
+
 .card-date::before {
   content: "📅";
   margin-right: 5px;
 }
+
 .card-tag {
   margin-top: auto;
   display: inline-block;
@@ -690,6 +739,7 @@ header p {
   font-size: 0.8rem;
   align-self: flex-start;
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -703,6 +753,7 @@ header p {
   backdrop-filter: blur(5px);
   animation: fadeIn 0.3s;
 }
+
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto;
@@ -714,6 +765,7 @@ header p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   animation: slideIn 0.3s ease-out;
 }
+
 .close-btn {
   color: #aaa;
   float: right;
@@ -725,9 +777,11 @@ header p {
   cursor: pointer;
   z-index: 10;
 }
+
 .close-btn:hover {
   color: black;
 }
+
 .modal-image {
   width: 100%;
   max-height: 400px;
@@ -736,36 +790,45 @@ header p {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
+
 .modal-img {
   height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
+
 .modal-body {
   padding: 30px;
 }
+
 .modal-title {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #2c3e50;
 }
+
 .modal-date {
   color: #666;
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
+
 .modal-desc {
   font-size: 1rem;
   line-height: 1.6;
   color: #444;
-  white-space: pre-wrap; /* รักษารูปแบบการขึ้นบรรทัดใหม่ */
+  white-space: pre-wrap;
+  /* รักษารูปแบบการขึ้นบรรทัดใหม่ */
 }
+
 .modal-text {
   line-height: 1.8;
   font-size: 1.1rem;
-  white-space: pre-wrap; /* รักษารูปแบบการขึ้นบรรทัดใหม่ */
+  white-space: pre-wrap;
+  /* รักษารูปแบบการขึ้นบรรทัดใหม่ */
   color: #444;
 }
+
 .modal-footer {
   margin-top: 30px;
   padding-top: 20px;
@@ -773,6 +836,7 @@ header p {
   color: #666;
   font-style: italic;
 }
+
 .header-section {
   display: flex;
   justify-content: space-between;
@@ -781,6 +845,7 @@ header p {
   flex-wrap: wrap;
   gap: 15px;
 }
+
 .header-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -794,24 +859,28 @@ header p {
   object-fit: cover;
   background-color: #eee;
 }
+
 .card-img-top {
   width: 100%;
   height: 220px;
   object-fit: cover;
   background-color: #eee;
 }
+
 .card-body {
   padding: 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
+
 .card-excerpt {
   font-size: 0.95rem;
   color: #555;
   overflow: hidden;
   margin-bottom: 15px;
 }
+
 .card-badge {
   align-self: flex-start;
   background-color: #e8eaf6;
@@ -821,6 +890,7 @@ header p {
   font-size: 0.8rem;
   margin-top: auto;
 }
+
 .close-modal {
   position: absolute;
   right: 20px;
@@ -832,6 +902,7 @@ header p {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
+
 .modal-img-container {
   width: 100%;
   max-height: 450px;
@@ -841,6 +912,7 @@ header p {
   display: flex;
   justify-content: center;
 }
+
 .tags-container {
   margin-top: 30px;
   padding-top: 20px;
@@ -849,7 +921,8 @@ header p {
 
 .tag-link {
   display: inline-block;
-  background-color: #1877f2; /* Facebook Blue */
+  background-color: #1877f2;
+  /* Facebook Blue */
   color: white;
   text-decoration: none;
   padding: 5px 12px;
@@ -863,6 +936,7 @@ header p {
 .tag-link:hover {
   background-color: #145dbf;
 }
+
 .filter-box select {
   padding: 10px 20px;
   border-radius: 8px;
@@ -879,7 +953,8 @@ header p {
 .commander-container {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* ระยะห่างระหว่างชั้นยศ */
+  gap: 40px;
+  /* ระยะห่างระหว่างชั้นยศ */
   padding: 20px 0;
 }
 
@@ -912,9 +987,12 @@ header p {
 
 .commander-row {
   display: flex;
-  justify-content: center; /* จัดให้อยู่กึ่งกลางเสมอ */
-  flex-wrap: wrap; /* ถ้าหน้าจอเล็กให้ปัดลงมาบรรทัดใหม่ */
-  gap: 25px; /* ระยะห่างระหว่างการ์ด */
+  justify-content: center;
+  /* จัดให้อยู่กึ่งกลางเสมอ */
+  flex-wrap: wrap;
+  /* ถ้าหน้าจอเล็กให้ปัดลงมาบรรทัดใหม่ */
+  gap: 25px;
+  /* ระยะห่างระหว่างการ์ด */
   width: 100%;
 }
 
@@ -924,7 +1002,8 @@ header p {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  width: 240px; /* กำหนดความกว้างคงที่เพื่อให้จัดระเบียบง่าย */
+  width: 240px;
+  /* กำหนดความกว้างคงที่เพื่อให้จัดระเบียบง่าย */
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
@@ -948,29 +1027,35 @@ header p {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes slideIn {
   from {
     transform: translateY(-20px);
   }
+
   to {
     transform: translateY(0);
   }
 }
+
 @keyframes slideUp {
   from {
     transform: translateY(50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
   }
 }
+
 #loading {
   text-align: center;
   margin-top: 50px;
@@ -983,10 +1068,12 @@ header p {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .section-header {
   text-align: center;
   margin-bottom: 40px;
 }
+
 .section-header h2 {
   font-size: 2rem;
   color: var(--primary-color);
@@ -994,6 +1081,7 @@ header p {
   position: relative;
   display: inline-block;
 }
+
 .section-header h2::after {
   content: "";
   display: block;
@@ -1003,21 +1091,25 @@ header p {
   margin: 8px auto 0;
   border-radius: 2px;
 }
+
 /* Container Grid */
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* แบ่งครึ่งซ้ายขวา */
+  grid-template-columns: 1fr 1fr;
+  /* แบ่งครึ่งซ้ายขวา */
   gap: 40px;
   background: #fff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
+
 .contact-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .info-item {
   display: flex;
   align-items: flex-start;
@@ -1025,6 +1117,7 @@ header p {
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
 }
+
 .info-item:last-child {
   border-bottom: none;
 }
@@ -1109,13 +1202,15 @@ iframe {
   height: 100%;
   border: 0;
 }
+
 .main-container {
   display: flex;
   justify-content: center;
   gap: 50px;
   padding: 20px;
   width: 100%;
-  flex-wrap: wrap; /* ให้พับลงมาเมื่อจอเล็ก */
+  flex-wrap: wrap;
+  /* ให้พับลงมาเมื่อจอเล็ก */
   z-index: 10;
 }
 
@@ -1125,9 +1220,12 @@ iframe {
   min-width: 300px;
   max-width: 450px;
   height: 320px;
-  background: rgba(255, 255, 255, 0.03); /* พื้นหลังใส */
-  border: 1px solid rgba(255, 215, 0, 0.1); /* ขอบสีทองจางๆ */
-  border-radius: 4px; /* มุมเหลี่ยมเล็กน้อยให้ดูแข็งแกร่ง */
+  background: rgba(255, 255, 255, 0.03);
+  /* พื้นหลังใส */
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  /* ขอบสีทองจางๆ */
+  border-radius: 4px;
+  /* มุมเหลี่ยมเล็กน้อยให้ดูแข็งแกร่ง */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1154,7 +1252,8 @@ iframe {
 .portal-card::before {
   top: -1px;
   left: -1px;
-  border-top-color: #ffd700; /* สีทอง */
+  border-top-color: #ffd700;
+  /* สีทอง */
   border-left-color: #ffd700;
 }
 
@@ -1196,18 +1295,393 @@ iframe {
 
 /* --- Hover Effects (เมื่อเอาเมาส์ชี้) --- */
 .portal-card:hover {
-  background: rgba(255, 215, 0, 0.05); /* พื้นหลังเปลี่ยนเป็นสีทองจางๆ */
+  background: rgba(255, 215, 0, 0.05);
+  /* พื้นหลังเปลี่ยนเป็นสีทองจางๆ */
   border-color: rgba(255, 215, 0, 0.6);
   transform: translateY(-10px);
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.8),
-    0 0 20px rgba(255, 215, 0, 0.1); /* แสงเรือง */
+    0 0 20px rgba(255, 215, 0, 0.1);
+  /* แสงเรือง */
 }
 
 .portal-card:hover .logo-img {
-  transform: scale(1.1); /* ขยายรูป */
+  transform: scale(1.1);
+  /* ขยายรูป */
 }
 
 .portal-card:hover .card-text {
-  color: #ffd700; /* เปลี่ยนตัวหนังสือเป็นสีทอง */
+  color: #ffd700;
+  /* เปลี่ยนตัวหนังสือเป็นสีทอง */
+}
+
+/* ============================== */
+/* === Nav Sub Text === */
+/* ============================== */
+.nav-sub {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  display: block;
+  line-height: 1;
+}
+
+/* ============================== */
+/* === Nav Logo Responsive === */
+/* ============================== */
+.nav-logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ============================== */
+/* === Hamburger Menu === */
+/* ============================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 200;
+  transition: all 0.3s ease;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ============================== */
+/* === Footer Responsive === */
+/* ============================== */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.footer-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-logos img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.footer-address h3,
+.footer-contact h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.footer-address p,
+.footer-contact p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.footer-social {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-social a:hover {
+  opacity: 0.7;
+}
+
+/* ============================== */
+/* === Page Banner (Sub-pages) === */
+/* ============================== */
+.page-banner {
+  background: url(../images/page2-5.jpg) no-repeat center/cover;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.page-banner:hover {
+  filter: grayscale(0%);
+}
+
+.page-banner h2 {
+  font-size: clamp(1.8rem, 5vw, 4rem);
+  color: #ffffff;
+  text-shadow: 4px 4px 20px rgb(0, 0, 0);
+}
+
+.page-banner .banner-subtitle {
+  font-size: clamp(1rem, 3vw, 2rem);
+  margin-top: -15px;
+  color: #ffd300;
+  text-shadow: 4px 4px 20px #000000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ============================== */
+/* === Responsive: Tablet 768px === */
+/* ============================== */
+@media (max-width: 768px) {
+
+  /* Hamburger visible */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Nav collapses */
+  .main-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 150;
+    padding: 10px 0;
+  }
+
+  .main-menu.open {
+    display: block;
+  }
+
+  .main-menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .main-menu li {
+    border-bottom: 1px solid #eee;
+  }
+
+  .main-menu a {
+    display: block;
+    padding: 12px 20px;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .logo h1 {
+    font-size: 1.1rem;
+  }
+
+  .logo span {
+    font-size: 0.75rem;
+  }
+
+  .nav-logo {
+    width: 60px;
+  }
+
+  /* Hero banner */
+  .hero-banner {
+    height: 400px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  /* Page banner */
+  .page-banner {
+    height: 220px;
+  }
+
+  /* Footer stacked */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-logos {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-logos img {
+    width: 100px;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  /* Main container portal cards */
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .portal-card {
+    width: 90%;
+    max-width: 400px;
+    height: 250px;
+  }
+
+  /* Contact */
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .map-wrapper {
+    min-height: 300px;
+    order: -1;
+  }
+
+  /* About tabs */
+  .tab-btn {
+    flex: 1 1 100%;
+    border-bottom: 1px solid #eee;
+  }
+
+  .tab-btn.active {
+    border-bottom: 4px solid var(--primary-color);
+  }
+
+  /* Container */
+  .container {
+    padding: 15px;
+  }
+
+  /* Cards */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer item legacy */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* ============================== */
+/* === Responsive: Mobile 480px === */
+/* ============================== */
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 0.9rem;
+  }
+
+  .nav-logo {
+    width: 45px;
+  }
+
+  .hero-banner {
+    height: 300px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .page-banner {
+    height: 180px;
+  }
+
+  .portal-card {
+    height: 200px;
+    min-width: auto;
+    width: 95%;
+  }
+
+  .portal-card .logo-img {
+    max-height: 100px;
+    margin-bottom: 15px;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .footer-logos img {
+    width: 80px;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .commander-card {
+    width: 100%;
+    max-width: 280px;
+  }
 }
