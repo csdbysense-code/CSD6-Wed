@@ -57,17 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// --- การตั้งค่า ---
-// ใส่ Google Sheet ID ของคุณที่นี่
-const SHEET_ID = "1s9Px5lhvXmfGuogF8E-QFZiPq_hJk74Rn5gULDxTMl8";
-const SHEET_NAME = "Sheet1"; // ชื่อแท็บข้างล่าง (ปกติคือ Sheet1)
+// --- การตั้งค่าข่าวหน้าหลัก ---
+const NEWS_SHEET_ID = "1s9Px5lhvXmfGuogF8E-QFZiPq_hJk74Rn5gULDxTMl8";
+const NEWS_SHEET_NAME = "Sheet1";
 
-// URL สำหรับดึงข้อมูลแบบ JSON
-const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`;
+const NEWS_API_URL = `https://docs.google.com/spreadsheets/d/${NEWS_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${NEWS_SHEET_NAME}`;
 
 async function fetchNews() {
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(NEWS_API_URL);
     const text = await response.text();
 
     // ข้อมูลที่ได้มาจะมี text ครอบอยู่ ต้องตัดออกเพื่อให้เป็น JSON แท้ๆ
@@ -107,13 +105,17 @@ async function fetchNews() {
     renderNews(groupedNews);
   } catch (error) {
     console.error("Error fetching data:", error);
-    document.getElementById("news-feed").innerHTML =
-      '<p style="color:red; text-align:center;">ไม่สามารถดึงข้อมูลได้ โปรดตรวจสอบ Sheet ID หรือการตั้งค่า Share</p>';
+    const container = document.getElementById("news-feed");
+    if (container) {
+      container.innerHTML =
+        '<p style="color:red; text-align:center;">ไม่สามารถดึงข้อมูลได้ โปรดตรวจสอบ Sheet ID หรือการตั้งค่า Share</p>';
+    }
   }
 }
 
 function renderNews(groupedNews) {
   const container = document.getElementById("news-feed");
+  if (!container) return;
   container.innerHTML = ""; // เคลียร์ข้อความ Loading
 
   // รูปภาพสำรอง (กรณีลิ้งค์ใน Col H ไม่ใช่ไฟล์รูปภาพ)
@@ -161,4 +163,6 @@ function renderNews(groupedNews) {
 }
 
 // เริ่มทำงานเมื่อโหลดหน้าเว็บ
-fetchNews();
+if (document.getElementById("news-feed")) {
+  fetchNews();
+}

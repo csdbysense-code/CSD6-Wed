@@ -79,16 +79,19 @@ content %}
   </section>
 </main>
 <script>
-  function copyEmail() {
-    const email = "saraban_csd.cib@police.go.th";
-    navigator.clipboard
-      .writeText(email)
-      .then(() => {
-        alert("คัดลอกอีเมลเรียบร้อยแล้ว: " + email);
-      })
-      .catch((err) => {
-        console.error("ไม่สามารถคัดลอกได้", err);
-      });
+  {
+    function copyEmail() {
+      const email = "saraban_csd.cib@police.go.th";
+      navigator.clipboard
+        .writeText(email)
+        .then(() => {
+          alert("คัดลอกอีเมลเรียบร้อยแล้ว: " + email);
+        })
+        .catch((err) => {
+          console.error("ไม่สามารถคัดลอกได้", err);
+        });
+    }
+    window.copyEmail = copyEmail;
   }
 </script>
 {% endblock %}
